@@ -146,7 +146,7 @@ impl<'a> CheckFilter<'a> {
             None => return self.skip_any_report(|| SkipReason::AsSetRouteUnrecorded(name.into())),
         };
 
-        if match_ips(&self.compare.prefix, &as_set_route.routes, op) {
+        if as_set_route.routes.match_ip_range(&self.compare.prefix, op) {
             return None;
         }
         let mut aggregator = AnyReportAggregator::new();

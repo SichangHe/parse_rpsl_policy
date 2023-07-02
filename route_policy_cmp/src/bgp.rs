@@ -4,6 +4,7 @@ pub mod map;
 pub mod peering;
 pub mod query;
 pub mod report;
+pub mod trie;
 pub mod verbosity;
 pub mod wrapper;
 
